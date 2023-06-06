@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  h2 {
+    font-size: 35px;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 400px;
+  height: 470px;
+  border: 1px solid #e7ebf0;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.button {
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 6px;
+  background-color: black;
+  color: white;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    scale: (0.9);
+  }
+  span {
+    font-family: "Prompt";
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+.text {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.6;
+}
