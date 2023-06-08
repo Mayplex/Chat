@@ -1,0 +1,19 @@
+.block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    list-style: none;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgb(197, 172, 172);
+    height: 100%;
+    width: 100%;
+  }
+}
