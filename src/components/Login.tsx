@@ -1,7 +1,9 @@
 import styles from "./Login.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { useContext } from "react";
+import { Context } from "./Context";
 
 interface IFormInputs {
   password: string;
@@ -18,8 +20,26 @@ const Login = () => {
     mode: "onBlur",
     defaultValues: { email: "", password: "" },
   });
+  const navigate = useNavigate();
+  const context = useContext(Context);
+  if (context === null) {
+    return <div>Loading..</div>;
+  }
+  const { isAuth, turnAuthOff, turnAuthOn } = context;
 
   const onSubmit: SubmitHandler<IFormInputs> = (data) => {
+    const storedData = sessionStorage.getItem("userData");
+    if (storedData) {
+      const userData = JSON.parse(storedData);
+      if (
+        userData.email === data.email &&
+        userData.password === data.password
+      ) {
+        context?.turnAuthOn();
+        navigate("/profile/me");
+      }
+    }
+
     console.log(data);
     reset();
   };

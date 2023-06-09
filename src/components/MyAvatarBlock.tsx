@@ -1,11 +1,11 @@
-import Avatar from "./MyAvatar";
+import MyAvatar from "./MyAvatar";
 import styles from "./MyAvatarBlock.module.scss";
 import Online from "./Online";
 
 const MyAvatarBlock = () => {
   return (
     <div className={styles.theme}>
-      <Avatar />
+      <MyAvatar />
       <Online />
     </div>
   );

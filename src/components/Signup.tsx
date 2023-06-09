@@ -22,6 +22,7 @@ const Signup = () => {
   });
 
   const onSubmit: SubmitHandler<IFormInputs> = (data) => {
+    sessionStorage.setItem("userData", JSON.stringify(data));
     console.log(data);
     reset();
   };
